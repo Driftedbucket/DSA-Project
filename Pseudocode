@@ -1,0 +1,115 @@
+FUNCTION DEFINITIONS
+
+
+//INITIALIZING OUR ARRAYLISTS
+Arraylist<Integer> PhoneBookNumbers = new Arraylist<>()
+Arraylist<String> PhoneBookNames = new Arraylist<>()
+
+//Function to add a new contact
+addContact(name, number){
+Message = “Contact added successfully fn”
+PhoneBookNumbers.add(number)
+PhoneBookNames.add(name)
+return message
+}
+
+
+//Function to search for a contact by name
+searchContact(name){
+message=”This contact does not exist fn”
+i=0
+found=false
+WHILE(i<PhoneBookNames.size())THEN
+  if(PhoneBookNames.get(i)==name)
+    found=true
+    return PhoneBookNumber.get(i)
+endif
+i++
+endwhile
+IF(found ==false)THEN
+  return message
+ENDIF
+}
+
+
+//Function to display all contacts in pairs
+display(){
+FOR(i=0; i<PhoneBookNumbers.size(); i++)
+  Display PhoneBookNumbers.get(i)+“ ”+ PhoneBookNames.get(i)
+}
+ 
+//Function to delete contact by name
+deleteContact(name){
+message = “Contact deleted successfully!”
+
+//Get the index first
+i=0
+WHILE(i<PhoneBookNames.size)
+	IF(PhoneBookNmaes.get(i)==name)THEN
+		index=i
+		break
+	ENDIF
+	i++
+ENDWHILE
+//Delete the elements found at that index
+PhoneBookNames.remove(index)
+PhoneBookNumbers.remove(index)
+return message
+}
+
+
+//Function to update contact by name
+updateContact(name, newNumber){
+message=”Contact updated successfully!”
+//Get the index first
+i=0
+WHILE(i<PhoneBookNames.size())
+  IF(PhoneBookNames.get(i)==name)
+    index=i
+    break
+  ENDIF
+ENDWHILE
+//Update the number
+PhoneBookNumber.set(index, newNumber)
+return message
+}
+ 
+MAIN FUNCTION
+Start
+WHILE(true)
+  Display”1. Insert Contact”
+  Dsisplay”2. Search Contact”
+  Display”3. Display Contact”
+  Display”4. Delete Contact”
+  Display”5. Update Contact”
+Prompt user for their choice
+Get choice
+IF(choice==1)THEN
+  prompt for name, number
+  get name, number
+  display addContact(name, number)
+  break
+ELSE IF(choice==2)THEN
+  prompt for name to search for
+  get name
+  Display searchContact(name)
+  break
+ELSE IF(choice==3)THEN
+	Display displayContacts()
+break
+ELSE IF(choice==4)
+	prompt for name whose details user wishes to delete
+	get name
+	Display deleteContact(name)
+	break
+ELSE 
+	prompt for users name and their new number
+	get name, newNumber
+	Display updateContact(name, newNumber)
+	break
+ENDIF
+ENDIF
+ENDIF
+ENDIF
+ENDWHILE
+End
